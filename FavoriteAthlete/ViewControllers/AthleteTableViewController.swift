@@ -14,6 +14,20 @@ class AthleteTableViewController: UITableViewController {
         tableView.reloadData()
     }
 
+    @IBSegueAction func addAthlete(_ coder: NSCoder) -> AthleteFormViewController? {
+        return AthleteFormViewController(coder: coder)
+    }
+    
+    
+    @IBSegueAction func editAthlete(_ coder: NSCoder, sender: Any?) -> AthleteFormViewController? {
+        var athlete: Athlete?
+        guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else{ return AthleteFormViewController(coder: coder)}
+        athlete = athletes[indexPath.row]
+        return AthleteFormViewController(coder: coder, athlete: athlete)
+    }
+    
+    
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
