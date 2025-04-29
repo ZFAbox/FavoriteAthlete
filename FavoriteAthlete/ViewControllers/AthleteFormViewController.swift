@@ -9,12 +9,19 @@ import UIKit
 
 class AthleteFormViewController: UIViewController {
 
+    var athlete: Athlete?
+    
+    
+    init
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    private func updateView(){
+        
+    }
 
     /*
     // MARK: - Navigation
