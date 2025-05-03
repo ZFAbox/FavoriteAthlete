@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AthleteFormViewController: UIViewController {
+class AthleteFormViewController: UIViewController {
     var athlete: Athlete?
     
     @IBOutlet weak var athleteName: UITextField!
@@ -41,7 +41,10 @@ final class AthleteFormViewController: UIViewController {
               let age = Int(ageString),
               let league = athleteLeague.text,
               let team = athleteTeam.text else { return }
-        let athlete = Athlete(name: name, age: age, league: league, team: team)
+        
+        athlete = Athlete(name: name, age: age, league: league, team: team)
+        
+        performSegue(withIdentifier: "unwindToAthleteTableViewController", sender: self)
     }
     
     

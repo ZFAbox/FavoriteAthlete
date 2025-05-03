@@ -54,14 +54,14 @@
                     <navigationItem key="navigationItem" title="My Favorite Athletes" id="HkE-HG-Ylf">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sEp-s4-2KD">
                             <connections>
-                                <segue destination="Jdx-qb-Jda" kind="show" identifier="AddAthlete" destinationCreationSelector="addAthlete:" id="wJO-3P-Bh6"/>
+                                <segue destination="Jdx-qb-Jda" kind="show" identifier="AddAthlete" destinationCreationSelector="addAthlete:" id="EuZ-hJ-nlE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oUO-M2-GpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1062" y="139"/>
+            <point key="canvasLocation" x="1066" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hmg-5X-btS">
@@ -142,23 +142,21 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="vBG-05-QLL"/>
                     <connections>
-                        <outlet property="ageTextField" destination="5BH-RZ-lV3" id="1R7-Jn-nje"/>
                         <outlet property="athleteAge" destination="5BH-RZ-lV3" id="X3g-WN-OCm"/>
                         <outlet property="athleteLeague" destination="Qwm-lN-Kse" id="yMJ-iL-s5s"/>
                         <outlet property="athleteName" destination="9Ms-Uu-Heg" id="tsv-uF-SfZ"/>
                         <outlet property="athleteTeam" destination="uqw-ia-7EH" id="2M8-8F-JMZ"/>
-                        <outlet property="leagueTextField" destination="Qwm-lN-Kse" id="gYY-f1-HQF"/>
-                        <outlet property="nameTextField" destination="9Ms-Uu-Heg" id="VJo-C5-mAK"/>
-                        <outlet property="teamTextField" destination="uqw-ia-7EH" id="06a-T2-sLw"/>
+                        <segue destination="AsJ-eV-gDA" kind="unwind" identifier="unwindToAthleteTableViewController" unwindAction="unwindToAthleteTableViewControllerWithSegue:" id="9Gh-7Q-kzj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRJ-p2-DTp" sceneMemberID="firstResponder"/>
+                <exit id="AsJ-eV-gDA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1860" y="139"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lBM-ky-b8A"/>
+        <segue reference="EuZ-hJ-nlE"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

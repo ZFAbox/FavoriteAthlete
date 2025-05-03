@@ -13,11 +13,20 @@ class AthleteTableViewController: UITableViewController {
         
         tableView.reloadData()
     }
+    
+    @IBAction func unwindToAthleteTableViewController(segue: UIStoryboardSegue) {
+        guard let viewController = segue.source as? AthleteFormViewController, let athlete = viewController.athlete else { return }
+        if let indexPath = tableView.indexPathForSelectedRow {
+            athletes[indexPath.row] = athlete
+        } else {
+            athletes.append(athlete)
+        }
+        
+    }
 
     @IBSegueAction func addAthlete(_ coder: NSCoder) -> AthleteFormViewController? {
-        return AthleteFormViewController(coder: coder)
+        return AthleteFormViewController(coder: coder, athlete: nil)
     }
-    
     
     @IBSegueAction func editAthlete(_ coder: NSCoder, sender: Any?) -> AthleteFormViewController? {
         var athlete: Athlete?
@@ -25,8 +34,6 @@ class AthleteTableViewController: UITableViewController {
         athlete = athletes[indexPath.row]
         return AthleteFormViewController(coder: coder, athlete: athlete)
     }
-    
-    
     
     // MARK: - Table view data source
 
